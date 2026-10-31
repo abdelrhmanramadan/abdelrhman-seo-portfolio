@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdelrhman Mohamed SEO Portfolio</title>
+<meta name="description" content="Abdelrhman Mohamed, SEO & GEO Specialist. Case studies with real Search Console results across flight booking, B2B fintech and e-commerce in Egypt, Saudi Arabia and the Gulf.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Layout idea: the page reads like a search results page about him — query bar, AI answer, then the evidence (case studies as before/after query reports). */
+  --ink:#10162b;
+  --paper:#f4f5f8;
+  --card:#ffffff;
+  --muted:#5b6380;
+  --line:#dde0ea;
+  --cobalt:#2f4dff;
+  --amber:#e8890c;
+  --cobalt-soft:#e6eaff;
+  --font-display:"Bricolage Grotesque", "Inter Display", "Helvetica Neue", Arial, sans-serif;
+  --font-body:"IBM Plex Sans", Inter, "Helvetica Neue", Arial, sans-serif;
+  --font-mono:"IBM Plex Mono", ui-monospace, Menlo, "DejaVu Sans Mono", monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#e9ecf6; --paper:#0c0f1c; --card:#141933; --muted:#9aa2c0; --line:#262d4d;
+    --cobalt:#7d92ff; --amber:#f5a63a; --cobalt-soft:#1c2350; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#e9ecf6; --paper:#0c0f1c; --card:#141933; --muted:#9aa2c0; --line:#262d4d;
+  --cobalt:#7d92ff; --amber:#f5a63a; --cobalt-soft:#1c2350; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--cobalt)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;letter-spacing:-0.02em}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;flex-wrap:wrap}
+.brand{font-family:var(--font-display);font-weight:800;font-size:20px;text-decoration:none;color:var(--ink)}
+.brand span{color:var(--cobalt)}
+.navlinks{display:flex;gap:22px;flex-wrap:wrap}
+.navlinks a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:500}
+.navlinks a:hover{color:var(--ink)}
+
+/* hero */
+.hero{padding:40px 0 64px;display:grid;gap:28px}
+.query{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:14px 22px;max-width:640px;box-shadow:0 6px 24px -12px rgba(16,22,43,.25)}
+.query svg{flex:none;color:var(--muted)}
+.query .q{font-family:var(--font-mono);font-size:16px}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--cobalt);vertical-align:-3px;margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.answer{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--cobalt);border-radius:14px;padding:22px 24px;max-width:760px}
+.answer .label{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--cobalt);display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.answer p{margin:0 0 12px}
+.cites{display:flex;gap:8px;flex-wrap:wrap}
+.cite{font-family:var(--font-mono);font-size:12px;background:var(--cobalt-soft);color:var(--cobalt);padding:4px 10px;border-radius:999px;text-decoration:none}
+.hero h1{font-size:clamp(44px,7.4vw,96px);line-height:.95;font-weight:800;max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--cobalt)}
+.hero .lede{font-size:20px;color:var(--muted);max-width:60ch;margin:0}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:16px;border:1.5px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;font-family:var(--font-body)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn:hover{transform:translateY(-1px)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{padding:26px 20px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--font-display);font-size:clamp(30px,4vw,44px);font-weight:800;line-height:1;letter-spacing:-0.02em}
+.stat b.up{color:var(--amber)}
+.stat span{display:block;color:var(--muted);font-size:14px;margin-top:8px}
+
+/* sections */
+section{padding:84px 0 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:32px}
+.eyebrow{font-family:var(--font-mono);font-size:13px;color:var(--cobalt);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(32px,4.4vw,52px);line-height:1.02;font-weight:800;max-width:18ch}
+.sec-note{color:var(--muted);max-width:44ch;margin:0;font-size:15px}
+
+/* cases */
+.cases{display:grid;gap:18px}
+.case{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;display:grid;grid-template-columns:1.1fr 1fr;gap:32px}
+.case .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.chip{font-family:var(--font-mono);font-size:12px;border:1px solid var(--line);padding:3px 10px;border-radius:999px;color:var(--muted)}
+.case h3{font-size:26px;font-weight:700;line-height:1.15;margin-bottom:14px}
+.case ul{margin:0;padding-left:18px;color:var(--muted);font-size:15.5px}
+.case li{margin-bottom:6px}
+.metric{display:grid;gap:8px;margin-bottom:22px}
+.metric:last-child{margin-bottom:0}
+.metric-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.metric-name{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.metric-pct{font-family:var(--font-display);font-weight:800;font-size:clamp(34px,4.2vw,50px);line-height:1;color:var(--amber);letter-spacing:-0.02em}
+.bar{display:grid;grid-template-columns:64px 1fr 70px;align-items:center;gap:10px;font-family:var(--font-mono);font-size:12.5px;color:var(--muted)}
+.bar .track{height:10px;background:var(--cobalt-soft);border-radius:999px;overflow:hidden}
+.bar .fill{height:100%;border-radius:999px;background:var(--muted);opacity:.55}
+.bar.after .fill{background:var(--cobalt);opacity:1}
+.bar .v{text-align:right;color:var(--ink);font-variant-numeric:tabular-nums}
+.single-note{margin:6px 0 14px;color:var(--muted);font-size:15px}
+.stores{display:flex;gap:8px;flex-wrap:wrap}
+.period{font-family:var(--font-mono);font-size:12px;color:var(--muted);margin-top:16px}
+.method{margin-top:22px;padding:18px 22px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);font-size:15px}
+.method b{color:var(--ink)}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.svc{background:var(--card);padding:28px}
+.svc h3{font-size:21px;font-weight:700;margin-bottom:8px}
+.svc p{margin:0;color:var(--muted);font-size:15.5px}
+.svc .tag{font-family:var(--font-mono);font-size:12px;color:var(--cobalt);margin-bottom:12px;display:block}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.step{border-top:3px solid var(--ink);padding-top:16px}
+.step .n{font-family:var(--font-mono);font-size:13px;color:var(--cobalt)}
+.step h3{font-size:22px;font-weight:700;margin:6px 0 8px}
+.step p{margin:0;color:var(--muted);font-size:15.5px}
+
+/* tools */
+.tools{display:flex;flex-wrap:wrap;gap:10px}
+.tool{font-family:var(--font-mono);font-size:14px;background:var(--card);border:1px solid var(--line);padding:8px 14px;border-radius:10px}
+.tool-group{margin-bottom:22px}
+.tool-group h3{font-size:15px;font-family:var(--font-mono);font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
+
+/* contact */
+.contact{margin:96px 0 0;background:var(--ink);color:var(--paper);border-radius:24px;padding:56px 40px;display:grid;gap:22px}
+.contact h2{color:var(--paper);max-width:16ch}
+.contact p{margin:0;opacity:.8;max-width:56ch}
+.contact .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.contact .btn{border-color:var(--paper);color:var(--paper)}
+.contact .btn.primary{background:var(--paper);color:var(--ink)}
+.contact .addr{font-family:var(--font-mono);font-size:15px;opacity:.85}
+.copied{font-family:var(--font-mono);font-size:13px;color:var(--amber);min-width:70px}
+footer{padding:36px 0 48px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:880px){
+  .case{grid-template-columns:1fr}
+  .services{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media (max-width:520px){
+  .services,.steps{grid-template-columns:1fr}
+  .wrap{padding:0 16px}
+  .case{padding:22px}
+  .contact{padding:40px 22px}
+  .bar{grid-template-columns:52px 1fr 60px}
+}
+
+.channels{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.15);border-radius:14px;overflow:hidden}
+.ch{background:var(--ink);padding:18px 20px;display:grid;gap:4px;min-width:0}
+.ch-k{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--amber)}
+.ch-v{color:var(--paper);text-decoration:none;font-weight:500;overflow-wrap:anywhere}
+.ch-v:hover{text-decoration:underline}
+@media (max-width:880px){.channels{grid-template-columns:1fr}}
+
+@page{size:A4;margin:14mm 12mm}
+@media print{
+  :root,:root[data-theme="dark"]{--ink:#10162b;--paper:#ffffff;--card:#ffffff;--muted:#5b6380;--line:#dde0ea;--cobalt:#2f4dff;--amber:#e8890c;--cobalt-soft:#e6eaff;color-scheme:light}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-size:13px}
+  .wrap{max-width:none;padding:0}
+  .navlinks,.ctas,.noprint,.caret{display:none!important}
+  .hero{padding:40px 0 44px;gap:24px}
+  .hero h1{font-size:76px}
+  .hero .lede{font-size:17px}
+  .answer{font-size:14px}
+  .stats{break-inside:avoid}
+  .stat b{font-size:40px}
+  .stat{padding:28px 18px}
+  section{padding:28px 0 0}
+  section#work{break-before:page;padding-top:0}
+  section#services{break-before:page;padding-top:0}
+  section#tools{break-before:page;padding-top:0}
+  .sec-head{margin-bottom:16px;break-after:avoid}
+  h2{font-size:32px}
+  .case{grid-template-columns:1.1fr 1fr;gap:22px;padding:18px 20px;break-inside:avoid}
+  .cases{gap:10px}
+  .case h3{font-size:19px;margin-bottom:8px}
+  .case ul{font-size:12.5px}
+  .metric{margin-bottom:12px}
+  .metric-pct{font-size:30px}
+  .method{break-inside:avoid;font-size:12.5px}
+  .services{grid-template-columns:repeat(3,1fr)}
+  .svc{padding:16px;break-inside:avoid}
+  .svc h3{font-size:16px}.svc p{font-size:12.5px}
+  .steps{grid-template-columns:repeat(4,1fr);break-inside:avoid}
+  .step h3{font-size:17px}.step p{font-size:12.5px}
+  .tool-group{break-inside:avoid;margin-bottom:12px}
+  .tool{font-size:11.5px;padding:5px 10px}
+  .contact{margin-top:28px;padding:28px;break-inside:avoid}
+  .channels{grid-template-columns:1fr}
+  .ch{grid-template-columns:150px 1fr;align-items:center;padding:12px 18px}
+  .ch-v{font-size:14px}
+  .contact .btn,.contact .copied{display:none}
+  footer{padding:16px 0 0}
+  a{text-decoration:none}
+}
+@media (prefers-reduced-motion:reduce){.caret{animation:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="brand" href="#top">Abdelrhman<span>.</span></a>
+    <div class="navlinks">
+      <a href="#work">Case studies</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="query" aria-label="Example search query">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <span class="q">seo &amp; geo specialist for my brand<span class="caret" aria-hidden="true"></span></span>
+    </div>
+
+    <div class="answer">
+      <div class="label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.2 6.6L21 11l-6.8 2.4L12 20l-2.2-6.6L3 11l6.8-2.4z"/></svg>
+        AI answer
+      </div>
+      <p><strong>Abdelrhman Mohamed</strong> is an SEO &amp; GEO Specialist with 5+ years of experience helping SaaS, fintech, travel, e-commerce and app brands across Egypt, Saudi Arabia and the Gulf grow non-branded organic traffic and get cited in AI search results.</p>
+      <div class="cites">
+        <a class="cite" href="#work">Case studies</a>
+        <a class="cite" href="#services">Services</a>
+        <a class="cite" href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <h1>Found on Google. <em>Cited by AI.</em></h1>
+    <p class="lede">I build SEO and Generative Engine Optimization strategies that turn search demand into traffic, leads and revenue, with less dependence on paid ads.</p>
+    <div class="ctas">
+      <a class="btn primary" href="#contact">Start a project</a>
+      <a class="btn" href="#work">See the results</a>
+    </div>
+  </header>
+
+  <div class="stats" role="list">
+    <div class="stat" role="listitem"><b class="up mono">+4,409%</b><span>Organic clicks, flight booking platform</span></div>
+    <div class="stat" role="listitem"><b class="mono">3.26M</b><span>Impressions in 3 months, B2B payments</span></div>
+    <div class="stat" role="listitem"><b class="mono">9</b><span>Case studies across travel, fintech, e-commerce and apps</span></div>
+    <div class="stat" role="listitem"><b class="mono">0</b><span>Branded keywords counted in any result</span></div>
+  </div>
+
+  <section id="work" aria-labelledby="work-h">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Case studies</div>
+        <h2 id="work-h">Results from real Search Console data</h2>
+      </div>
+      <p class="sec-note">Client names are kept private. Each project compares the latest period against the period before it.</p>
+    </div>
+    <div class="cases" id="cases"></div>
+    <div class="method"><b>How these numbers are measured:</b> only non-branded keywords with real search demand are counted. Any query that contains the client's brand name is excluded, so the growth reflects new customers finding the business, not people who already knew it.</div>
+  </section>
+
+  <section id="services" aria-labelledby="svc-h">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Services</div>
+        <h2 id="svc-h">What I can do for your business</h2>
+      </div>
+    </div>
+    <div class="services">
+      <div class="svc"><span class="tag">Strategy</span><h3>SEO strategy &amp; audits</h3><p>A full audit of your site and competitors, then a prioritized plan that ties every task to traffic and revenue.</p></div>
+      <div class="svc"><span class="tag">AI search</span><h3>GEO &amp; AEO</h3><p>Content, schema and entity work that gets your brand cited in ChatGPT, Gemini, Perplexity and Google AI Overviews.</p></div>
+      <div class="svc"><span class="tag">Technical</span><h3>Technical SEO</h3><p>Indexing, crawlability, site architecture, duplicate content, Core Web Vitals and structured data, fixed with your developers.</p></div>
+      <div class="svc"><span class="tag">E-commerce</span><h3>Store SEO</h3><p>Category and product page structure for Shopify, Salla, Zid, WordPress and custom-built stores.</p></div>
+      <div class="svc"><span class="tag">Content</span><h3>Keyword &amp; content strategy</h3><p>Search intent mapping, landing page planning and content for transactional and informational queries.</p></div>
+      <div class="svc"><span class="tag">Reporting</span><h3>Dashboards &amp; automation</h3><p>Data Studio dashboards and Google Sheets automation, so you see exactly what is working every month.</p></div>
+    </div>
+  </section>
+
+  <section id="process" aria-labelledby="proc-h">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Process</div>
+        <h2 id="proc-h">How a project runs</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n mono">01</div><h3>Audit</h3><p>Technical, content and competitor review to find what is holding your site back.</p></div>
+      <div class="step"><div class="n mono">02</div><h3>Strategy</h3><p>Keyword and page map by search intent, with priorities ranked by business impact.</p></div>
+      <div class="step"><div class="n mono">03</div><h3>Execution</h3><p>On-page, technical, content and link building work, done with your team.</p></div>
+      <div class="step"><div class="n mono">04</div><h3>Reporting</h3><p>Monthly reports on non-branded growth, rankings and AI search visibility.</p></div>
+    </div>
+  </section>
+
+  <section id="tools" aria-labelledby="tools-h">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Toolkit</div>
+        <h2 id="tools-h">Tools and platforms</h2>
+      </div>
+    </div>
+    <div class="tool-group"><h3>SEO &amp; analytics</h3><div class="tools">
+      <span class="tool">Google Search Console</span><span class="tool">GA4</span><span class="tool">Google Tag Manager</span><span class="tool">Data Studio</span><span class="tool">Ahrefs</span><span class="tool">Semrush</span><span class="tool">Screaming Frog</span>
+    </div></div>
+    <div class="tool-group"><h3>Platforms</h3><div class="tools">
+      <span class="tool">Shopify</span><span class="tool">WordPress</span><span class="tool">Salla</span><span class="tool">Zid</span><span class="tool">Webflow</span><span class="tool">Custom-built sites</span>
+    </div></div>
+    <div class="tool-group"><h3>Technical &amp; automation</h3><div class="tools">
+      <span class="tool">HTML</span><span class="tool">CSS</span><span class="tool">JavaScript</span><span class="tool">Schema / JSON-LD</span><span class="tool">Google Sheets automation</span><span class="tool">Google Cloud</span>
+    </div></div>
+  </section>
+
+  <div class="contact" id="contact">
+    <div class="eyebrow" style="color:var(--amber)">Contact</div>
+    <h2>Let's grow your organic traffic</h2>
+    <p>Tell me about your website and your goals. I'll reply with a first look at where your biggest SEO and AI search opportunities are.</p>
+    <div class="channels">
+      <div class="ch"><span class="ch-k">Email</span><a class="ch-v" href="mailto:abdelrhmanramadan32@gmail.com">abdelrhmanramadan32@gmail.com</a></div>
+      <div class="ch"><span class="ch-k">Phone / WhatsApp</span><a class="ch-v" href="https://wa.me/201023896576">+20 102 389 6576</a></div>
+      <div class="ch"><span class="ch-k">Portfolio</span><a class="ch-v" href="https://abdelrhman-seo.vercel.app">abdelrhman-seo.vercel.app</a></div>
+      <div class="ch"><span class="ch-k">LinkedIn</span><a class="ch-v" href="https://www.linkedin.com/in/abdelrhman-seo/">linkedin.com/in/abdelrhman-seo</a></div>
+    </div>
+    <div class="row noprint">
+      <button class="btn primary" id="copyEmail" type="button">Copy email</button>
+      <a class="btn" href="https://wa.me/201023896576">Message on WhatsApp</a>
+      <span class="copied" id="copied" aria-live="polite"></span>
+    </div>
+  </div>
+
+  <footer>
+    <span>Abdelrhman Mohamed, SEO &amp; GEO Specialist</span>
+    <span>Giza, Egypt · Working with clients remotely</span>
+  </footer>
+</div>
+
+<script>
+const cases = [
+  {title:"Flight booking platform", industry:"Travel", market:"Egypt & KSA", period:"Last 3 months vs previous 3 months",
+   actions:["Restructured the site by search intent based on keyword research","Optimized landing pages and metadata for booking queries","Found technical issues and shipped fixes with the development team"],
+   clicks:[55,2480], impr:[60200,390000], pc:"4,409", pi:"548"},
+  {title:"Home laser devices store", industry:"E-commerce", market:"Saudi Arabia", period:"Last 6 months vs previous 6 months",
+   actions:["Rebuilt the product taxonomy and site structure from scratch","Led the structure with the winning product to lift conversion (CRO)","Wrote content for every product and category page, adding category content sections through a third-party tool where the CMS had none"],
+   clicks:[18000,112000], impr:[114000,176000], pc:"522", pi:"54"},
+  {title:"Hair care & styling devices store", industry:"E-commerce, new site", market:"Saudi Arabia", period:"Last 3 months vs previous 3 months",
+   actions:["Built category and product pages from keyword research","Added structured data (Schema)","Fixed duplicate content through robots.txt"],
+   clicks:[45,710], impr:[5550,103000], pc:"1,478", pi:"1,756"},
+  {title:"Tissue & paper products store", industry:"E-commerce", market:"Saudi Arabia", period:"Last 6 months vs previous 6 months",
+   actions:["Optimized pages, fixed page-level issues and improved internal linking","Grew the blog and ran backlink campaigns on coupon sites","Added FAQs to category pages through a third-party tool where the CMS had no support, a major driver of the results"],
+   clicks:[9000,24000], impr:[304000,610000], pc:"167", pi:"101"},
+  {title:"B2B payment solutions platform", industry:"Fintech, B2B", market:"Saudi Arabia", period:"Last 3 months vs previous 3 months",
+   actions:["Keyword research and landing page planning","SEO content for transactional and informational queries","Technical fixes and backlink campaigns"],
+   clicks:[2520,5260], impr:[1300000,3260000], pc:"109", pi:"151"},
+  {title:"Mattress store", industry:"E-commerce", market:"Saudi Arabia", period:"Last 6 months vs previous 6 months",
+   actions:["On-page optimization and internal linking","Blog content strategy and paid backlink campaigns","Resolved all technical SEO issues across the site"],
+   clicks:[18000,34000], impr:[1700000,2200000], pc:"89", pi:"29"},
+  {title:"Fashion & apparel store", industry:"E-commerce", market:"", period:"Last 6 months vs previous 6 months",
+   actions:["Segmented categories by user intent","Fixed indexing and crawlability issues","Improved internal linking and site architecture"],
+   clicks:[2230,3780], impr:[500000,518000], pc:"69", pi:"4"},
+  {title:"Coffee & brewing equipment store", industry:"E-commerce", market:"Saudi Arabia", period:"Last 6 months vs previous 6 months",
+   actions:["On-page and metadata optimization","Restructured category and product pages","Fixed crawlability and indexing issues, plus backlink campaigns"],
+   clicks:[9770,14200], impr:[1090000,1300000], pc:"45", pi:"19"},
+  {title:"Marriage app (Android & iOS)", industry:"Mobile app, ASO", market:"Saudi Arabia", period:"Last 6 months vs previous 6 months",
+   actions:["Full ASO on Google Play and the App Store: app title, description and dedicated keyword research with ASO tools","Set up tracking on the website to map the user journey and placed download buttons where users engage most","Built the blog from zero into a leading resource for paid marriage apps"],
+   source:"App store downloads", single:{name:"App downloads", pct:"40", note:"Growth in downloads across Android and iOS"}}
+];
+const trim = s => s.includes(".") ? s.replace(/0+$/,"").replace(/\.$/,"") : s;
+const fmt = n => n>=1e6 ? trim((n/1e6).toFixed(2))+"M" : n>=1e3 ? trim((n/1e3).toFixed(n>=1e5?0:2))+"K" : String(n);
+
+const single = m => `<div class="metric">
+    <div class="metric-top"><span class="metric-name">${m.name}</span><span class="metric-pct mono">+${m.pct}%</span></div>
+    <p class="single-note">${m.note}</p>
+    <div class="stores"><span class="chip">Google Play</span><span class="chip">App Store</span><span class="chip">Blog from zero</span></div>
+  </div>`;
+const metric = (name,[a,b],p) => {
+  const w = Math.max(a/b*100, 1.5).toFixed(1);
+  return `<div class="metric">
+    <div class="metric-top"><span class="metric-name">${name}</span><span class="metric-pct mono">+${p}%</span></div>
+    <div class="bar"><span>Before</span><div class="track"><div class="fill" style="width:${w}%"></div></div><span class="v">${fmt(a)}</span></div>
+    <div class="bar after"><span>After</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="v">${fmt(b)}</span></div>
+  </div>`;
+};
+document.getElementById("cases").innerHTML = cases.map(c => `
+  <article class="case">
+    <div>
+      <div class="meta"><span class="chip">${c.industry}</span>${c.market?`<span class="chip">${c.market}</span>`:""}</div>
+      <h3>${c.title}</h3>
+      <ul>${c.actions.map(a=>`<li>${a}</li>`).join("")}</ul>
+      <div class="period">${c.period} · ${c.source || "Google Search Console, non-branded"}</div>
+    </div>
+    <div>${c.single ? single(c.single) : metric("Clicks",c.clicks,c.pc)+metric("Impressions",c.impr,c.pi)}</div>
+  </article>`).join("");
+
+document.getElementById("copyEmail").addEventListener("click", async () => {
+  const out = document.getElementById("copied");
+  try { await navigator.clipboard.writeText("abdelrhmanramadan32@gmail.com"); out.textContent = "Copied"; }
+  catch(e){ out.textContent = "Copy it below"; }
+  setTimeout(()=>{ out.textContent=""; }, 2500);
+});
+</script>
+</body>
+</html>
