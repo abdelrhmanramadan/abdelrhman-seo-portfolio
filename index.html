@@ -131,6 +131,7 @@ h2{font-size:clamp(32px,4.4vw,52px);line-height:1.02;font-weight:800;max-width:1
 .st .ba{font-family:var(--font-mono);font-size:12px;color:var(--ink);font-variant-numeric:tabular-nums}
 .case-shot{padding:0 30px}
 .case-shot .proofs{gap:14px}
+.case-shot .proofs.one{grid-template-columns:minmax(0,880px);justify-content:center}
 .case-more{padding:24px 30px 28px}
 .tabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:18px}
 .tab{all:unset;cursor:pointer;font-family:var(--font-body);font-weight:600;font-size:14.5px;color:var(--muted);padding:10px 14px;border-bottom:2px solid transparent;margin-bottom:-1px}
@@ -441,6 +442,8 @@ const cases = [
    actions:["Restructured the site by search intent based on keyword research","Optimized landing pages and metadata for booking queries","Found technical issues and shipped fixes with the development team"],
    clicks:[55,2480], impr:[60200,390000], pc:"4,409", pi:"548", extra:"Average position improved from 57 to 13.4.",
    snap:{res:"+4,409%", sub:"organic clicks"},
+   kw:{mode:"gsc",two:true,rows:[["حجز طيران","Flight booking","296,000","42,000","17","619"],["ارخص تذاكر طيران","Cheapest flight tickets","3,700","2,200","1","227"],["حجز تذاكر طيران","Book flight tickets","14,000","7,700","0","192"],["حجز طيران رخيص","Cheap flight booking","22,000","5,600","1","177"],["ارخص طيران","Cheapest flights","28,000","5,000","1","172"]],
+       note:"Top non-branded queries from the Search Console comparison above. Monthly searches from Ahrefs for Saudi Arabia and Egypt."},
    proofs:[["gsc","flight","3-month comparison","2.48K clicks vs 55, 390K impressions vs 60.2K, average position 13.4 vs 57."]]},
 
   {id:"socks", title:"Socks & hosiery brand", industry:"E-commerce", market:"Saudi Arabia & GCC", period:"4 months vs previous 4 months (Nov 2024 to Mar 2025)",
@@ -466,6 +469,8 @@ const cases = [
    actions:["Built category and product pages from keyword research","Added structured data (Schema)","Fixed duplicate content through robots.txt"],
    clicks:[45,710], impr:[5550,103000], pc:"1,478", pi:"1,756", extra:"Average position improved from 11.1 to 7.1.",
    snap:{res:"+1,478%", sub:"organic clicks"},
+   kw:{mode:"gsc",rows:[["استشوار","Hair dryer","17,000","0","407"],["كوايت برش","Quiet brush","400","18","45"],["استشوار شعر","Hair dryer for hair","2,200","0","21"],["استشوار مشط","Hot air brush","1,100","5","13"],["افضل استشوار للشعر","Best hair dryer","700","0","13"]],
+       note:"Top non-branded queries from the Search Console comparison above. Monthly searches from Ahrefs, Saudi Arabia."},
    proofs:[["gsc","haircare","3-month comparison","710 clicks vs 45, 103K impressions vs 5.55K, average position 7.1 vs 11.1."]]},
 
   {id:"rehab", title:"Medical rehabilitation center", industry:"Healthcare, clinic", market:"Saudi Arabia", period:"6 months, before vs after",
@@ -508,6 +513,8 @@ const cases = [
    actions:["Keyword research and landing page planning","SEO content for transactional and informational queries","Technical fixes and backlink campaigns"],
    clicks:[2520,5260], impr:[1300000,3260000], pc:"109", pi:"151", extra:"Average position improved from 9 to 7.4.",
    snap:{res:"+109%", sub:"organic clicks"},
+   kw:{mode:"gsc",rows:[["بنك الانماء","Alinma Bank","30,000","17","291"],["فتح حساب بنك الانماء","Open an Alinma Bank account","1,600","0","256"],["فتح حساب بنك الإنماء اون لاين","Open an Alinma account online","1,000","0","122"],["مصرف الانماء","Alinma Bank (alternative name)","17,000","11","102"],["فتح حساب الانماء","Open an Alinma account","1,700","0","93"]],
+       note:"Bank integration queries: the platform connects company payments to Saudi banks, so searches about these banks bring qualified B2B traffic. Monthly searches from Ahrefs, Saudi Arabia."},
    proofs:[["gsc","payments","3-month comparison","5.26K clicks vs 2.52K, 3.26M impressions vs 1.3M, average position 7.4 vs 9."]]},
 
   {id:"coffee", title:"Coffee & brewing equipment store", industry:"E-commerce", market:"Saudi Arabia", period:"Last 6 months vs previous 6 months",
@@ -515,6 +522,8 @@ const cases = [
    actions:["On-page and metadata optimization","Restructured category and product pages","Fixed crawlability and indexing issues, plus backlink campaigns"],
    clicks:[9770,14200], impr:[1090000,1300000], pc:"45", pi:"19", extra:"Average position improved from 15.4 to 10.2.",
    snap:{res:"+45%", sub:"organic clicks"},
+   kw:{mode:"gsc",rows:[["محمصة","Coffee roastery (both Arabic spellings)","6,900","1,640","1,749"],["xbloom","xBloom coffee machine","2,100","0","716"],["اكس بلوم","xBloom (Arabic)","900","0","392"],["مق","Mug","10,000","0","365"],["قهوة","Coffee","22,000","68","270"]],
+       note:"Top non-branded queries from the Search Console comparison above. Monthly searches from Ahrefs, Saudi Arabia."},
    proofs:[["gsc","coffee","6-month comparison","14.2K clicks vs 9.77K, 1.3M impressions vs 1.09M, average position 10.2 vs 15.4."]]},
 
   {id:"pharmacy", title:"Enterprise retail pharmacy chain", industry:"Healthcare, enterprise e-commerce", market:"Egypt", period:"3 months, before vs after",
@@ -581,8 +590,15 @@ const proof = (c,[tool,file,label,cap]) => `
   </figure>`;
 const kpiTable = k => `<div class="tbl-scroll"><table class="kpi-table"><thead><tr>${k.head.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${
   k.rows.map(r=>`<tr>${r.map((v,i)=>`<td${i===r.length-1?' class="up"':''}>${v}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
-const kwTable = k => `<div class="tbl-scroll"><table class="kw-table"><thead><tr><th>Keyword</th><th>Meaning</th><th>Monthly searches</th><th>Before</th><th>After</th></tr></thead><tbody>${
+const kwTable = k => {
+  if(k.mode==="gsc"){
+    const head = `<th>Query</th><th>Meaning</th>${k.two?"<th>Searches KSA</th><th>Searches EG</th>":"<th>Monthly searches</th>"}<th>Clicks before</th><th>Clicks after</th>`;
+    const body = k.rows.map(r=>{ const n=k.two?2:1; return `<tr><td class="ar" lang="ar">${r[0]}</td><td>${r[1]}</td>${r.slice(2,2+n).map(v=>`<td class="mono">${v}</td>`).join("")}<td class="mono">${r[2+n]}</td><td class="rank">${r[3+n]}</td></tr>`; }).join("");
+    return `<div class="tbl-scroll"><table class="kw-table"><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div><p class="note">${k.note}</p>`;
+  }
+  return `<div class="tbl-scroll"><table class="kw-table"><thead><tr><th>Keyword</th><th>Meaning</th><th>Monthly searches</th><th>Before</th><th>After</th></tr></thead><tbody>${
   k.rows.map(r=>`<tr><td class="ar" lang="ar">${r[0]}</td><td>${r[1]}</td><td class="mono">${r[2]}</td><td class="mono">${r[3]}</td><td class="rank">${r[4]}</td></tr>`).join("")}</tbody></table></div><p class="note">${k.note}</p>`;
+};
 
 document.getElementById("cases").innerHTML = cases.map((c,i)=>{
   const gsc = c.proofs.filter(p=>p[0]==="gsc"), other = c.proofs.filter(p=>p[0]!=="gsc");
@@ -593,7 +609,7 @@ document.getElementById("cases").innerHTML = cases.map((c,i)=>{
                 tile(t.k,t.big,t.ba,t.sm);
   const panels = [["did","What I did",`<ul class="did">${c.actions.map(a=>`<li>${a}</li>`).join("")}</ul>`]];
   if(c.kpis) panels.push(["impact","Business impact",kpiTable(c.kpis)]);
-  if(c.kw) panels.push(["kw","Keyword rankings",kwTable(c.kw)]);
+  if(c.kw) panels.push(["kw",c.kw.mode==="gsc"?"Top keywords":"Keyword rankings",kwTable(c.kw)]);
   if(other.length) panels.push(["ev","GA4 & Ahrefs",`<div class="proofs">${other.map(p=>proof(c,p)).join("")}</div>`]);
   const tabs = panels.length>1 ? `<div class="tabs" role="tablist" aria-label="${esc(c.title)} details">${panels.map((p,j)=>
       `<button class="tab" role="tab" id="t-${c.id}-${p[0]}" aria-controls="p-${c.id}-${p[0]}" aria-selected="${j===0}" tabindex="${j===0?0:-1}">${p[1]}</button>`).join("")}</div>`
