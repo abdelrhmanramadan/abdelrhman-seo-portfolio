@@ -4,13 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abdelrhman Mohamed SEO Portfolio</title>
-<meta name="description" content="Abdelrhman Mohamed, SEO & GEO Specialist. Case studies with real Search Console results across flight booking, B2B fintech and e-commerce in Egypt, Saudi Arabia and the Gulf.">
+<meta name="description" content="Abdelrhman Mohamed, SEO & GEO Specialist. 10 case studies backed by real Google Search Console, GA4 and Ahrefs screenshots across healthcare, travel, fintech and e-commerce in Egypt, Saudi Arabia and the Gulf.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* Layout idea: the page reads like a search results page about him — query bar, AI answer, then the evidence (case studies as before/after query reports). */
   --ink:#10162b;
   --paper:#f4f5f8;
   --card:#ffffff;
@@ -18,30 +17,34 @@
   --line:#dde0ea;
   --cobalt:#2f4dff;
   --amber:#e8890c;
+  --green:#12805c;
   --cobalt-soft:#e6eaff;
   --font-display:"Bricolage Grotesque", "Inter Display", "Helvetica Neue", Arial, sans-serif;
   --font-body:"IBM Plex Sans", Inter, "Helvetica Neue", Arial, sans-serif;
+  --font-ar:"IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
   --font-mono:"IBM Plex Mono", ui-monospace, Menlo, "DejaVu Sans Mono", monospace;
   color-scheme:light;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --ink:#e9ecf6; --paper:#0c0f1c; --card:#141933; --muted:#9aa2c0; --line:#262d4d;
-    --cobalt:#7d92ff; --amber:#f5a63a; --cobalt-soft:#1c2350; color-scheme:dark;
+    --cobalt:#7d92ff; --amber:#f5a63a; --green:#4cc79a; --cobalt-soft:#1c2350; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --ink:#e9ecf6; --paper:#0c0f1c; --card:#141933; --muted:#9aa2c0; --line:#262d4d;
-  --cobalt:#7d92ff; --amber:#f5a63a; --cobalt-soft:#1c2350; color-scheme:dark;
+  --cobalt:#7d92ff; --amber:#f5a63a; --green:#4cc79a; --cobalt-soft:#1c2350; color-scheme:dark;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
 html,body{margin:0}
 body{background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:var(--cobalt)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+a:focus-visible,button:focus-visible,tr:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;letter-spacing:-0.02em}
 .mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.ar{font-family:var(--font-ar);direction:rtl;unicode-bidi:isolate}
 
 /* nav */
 nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;flex-wrap:wrap}
@@ -71,14 +74,6 @@ nav{display:flex;justify-content:space-between;align-items:center;gap:16px;paddi
 .btn.primary{background:var(--ink);color:var(--paper)}
 .btn:hover{transform:translateY(-1px)}
 
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.stat{padding:26px 20px;border-right:1px solid var(--line)}
-.stat:last-child{border-right:0}
-.stat b{display:block;font-family:var(--font-display);font-size:clamp(30px,4vw,44px);font-weight:800;line-height:1;letter-spacing:-0.02em}
-.stat b.up{color:var(--amber)}
-.stat span{display:block;color:var(--muted);font-size:14px;margin-top:8px}
-
 /* sections */
 section{padding:84px 0 0}
 .sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:32px}
@@ -86,12 +81,46 @@ section{padding:84px 0 0}
 h2{font-size:clamp(32px,4.4vw,52px);line-height:1.02;font-weight:800;max-width:18ch}
 .sec-note{color:var(--muted);max-width:44ch;margin:0;font-size:15px}
 
+/* executive summary */
+#summary{padding-top:0}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 22px 18px;text-decoration:none;color:var(--ink);display:grid;gap:6px;align-content:start;transition:border-color .15s,transform .15s}
+.kpi:hover{border-color:var(--cobalt);transform:translateY(-2px)}
+.kpi b{font-family:var(--font-display);font-size:clamp(32px,3.6vw,46px);font-weight:800;line-height:1;letter-spacing:-0.02em;color:var(--amber)}
+.kpi .k-what{font-weight:600;font-size:15.5px}
+.kpi .k-where{color:var(--muted);font-size:13.5px}
+.kpi .k-go{font-family:var(--font-mono);font-size:12px;color:var(--cobalt);margin-top:6px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;padding:16px 0 26px;color:var(--muted);font-size:15px}
+.facts b{color:var(--ink);font-family:var(--font-display);font-weight:800;font-size:20px;margin-right:6px}
+.snap-wrap{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.snap-title{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 22px;border-bottom:1px solid var(--line)}
+.snap-title h3{font-size:18px;font-weight:700}
+.snap-title span{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+.snap{width:100%;border-collapse:collapse;font-size:15px}
+.snap th{text-align:left;font-family:var(--font-mono);font-size:11.5px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);padding:12px 22px;border-bottom:1px solid var(--line);white-space:nowrap}
+.snap td{padding:13px 22px;border-bottom:1px solid var(--line);vertical-align:middle}
+.snap tr:last-child td{border-bottom:0}
+.snap tbody tr{cursor:pointer;transition:background .12s}
+.snap tbody tr:hover{background:var(--cobalt-soft)}
+.snap .n{font-family:var(--font-mono);color:var(--muted);width:40px}
+.snap .c-name{font-weight:600}
+.snap .c-name a{color:var(--ink);text-decoration:none}
+.snap .res{font-family:var(--font-display);font-weight:800;color:var(--amber);font-size:19px;white-space:nowrap}
+.snap .res small{display:block;font-family:var(--font-body);font-weight:400;color:var(--muted);font-size:12.5px}
+.snap .go{color:var(--cobalt);font-family:var(--font-mono);font-size:13px;text-align:right;white-space:nowrap}
+
 /* cases */
-.cases{display:grid;gap:18px}
-.case{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;display:grid;grid-template-columns:1.1fr 1fr;gap:32px}
-.case .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.cases{display:grid;gap:22px}
+.case{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px;display:grid;gap:26px;scroll-margin-top:20px}
+.case>*,.case-top>*,.two-col>*{min-width:0}
+.case:target{border-color:var(--cobalt);box-shadow:0 0 0 3px var(--cobalt-soft)}
+.case-top{display:grid;grid-template-columns:1.1fr 1fr;gap:34px}
+.case .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+.case-no{font-family:var(--font-mono);font-size:12px;color:var(--cobalt);margin-right:4px}
 .chip{font-family:var(--font-mono);font-size:12px;border:1px solid var(--line);padding:3px 10px;border-radius:999px;color:var(--muted)}
-.case h3{font-size:26px;font-weight:700;line-height:1.15;margin-bottom:14px}
+.chip.nb{border-color:var(--green);color:var(--green)}
+.case h3{font-size:27px;font-weight:700;line-height:1.15;margin-bottom:12px}
+.case .sum{margin:0 0 14px;font-size:16px}
 .case ul{margin:0;padding-left:18px;color:var(--muted);font-size:15.5px}
 .case li{margin-bottom:6px}
 .metric{display:grid;gap:8px;margin-bottom:22px}
@@ -99,16 +128,52 @@ h2{font-size:clamp(32px,4.4vw,52px);line-height:1.02;font-weight:800;max-width:1
 .metric-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .metric-name{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 .metric-pct{font-family:var(--font-display);font-weight:800;font-size:clamp(34px,4.2vw,50px);line-height:1;color:var(--amber);letter-spacing:-0.02em}
-.bar{display:grid;grid-template-columns:64px 1fr 70px;align-items:center;gap:10px;font-family:var(--font-mono);font-size:12.5px;color:var(--muted)}
+.metric-pct.txt{font-size:clamp(24px,2.8vw,32px)}
+.bar{display:grid;grid-template-columns:64px 1fr 74px;align-items:center;gap:10px;font-family:var(--font-mono);font-size:12.5px;color:var(--muted)}
 .bar .track{height:10px;background:var(--cobalt-soft);border-radius:999px;overflow:hidden}
 .bar .fill{height:100%;border-radius:999px;background:var(--muted);opacity:.55}
 .bar.after .fill{background:var(--cobalt);opacity:1}
 .bar .v{text-align:right;color:var(--ink);font-variant-numeric:tabular-nums}
-.single-note{margin:6px 0 14px;color:var(--muted);font-size:15px}
-.stores{display:flex;gap:8px;flex-wrap:wrap}
 .period{font-family:var(--font-mono);font-size:12px;color:var(--muted);margin-top:16px}
+
+/* proof blocks */
+.block-h{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 12px;display:flex;align-items:center;gap:10px}
+.block-h::after{content:"";flex:1;height:1px;background:var(--line)}
+.proofs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.proofs.one{grid-template-columns:1fr}
+.proof{margin:0;display:grid;gap:8px;align-content:start}
+.proof button{all:unset;cursor:zoom-in;display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;position:relative}
+.proof button:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.proof img{display:block;width:100%;height:auto;aspect-ratio:16/7}
+.proof .tag{position:absolute;left:10px;top:10px;font-family:var(--font-mono);font-size:11px;background:var(--ink);color:var(--paper);padding:3px 9px;border-radius:999px}
+.proof .zoom{position:absolute;right:10px;bottom:10px;font-family:var(--font-mono);font-size:11px;background:rgba(16,22,43,.78);color:#fff;padding:3px 9px;border-radius:999px;opacity:0;transition:opacity .15s}
+.proof button:hover .zoom,.proof button:focus-visible .zoom{opacity:1}
+.proof figcaption{font-size:14px;color:var(--muted);line-height:1.5}
+.proof figcaption b{color:var(--ink);font-weight:600}
+
+.kpi-table,.kw-table{width:100%;border-collapse:collapse;font-size:14.5px}
+.kpi-table th,.kw-table th{text-align:left;font-family:var(--font-mono);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);padding:9px 12px;border-bottom:1px solid var(--line)}
+.kpi-table td,.kw-table td{padding:10px 12px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.kpi-table tr:last-child td,.kw-table tr:last-child td{border-bottom:0}
+.kpi-table td.up,.kw-table td.up{color:var(--green);font-weight:600}
+.kw-table .ar{font-size:15.5px}
+.kw-table .rank{font-family:var(--font-display);font-weight:800;color:var(--amber)}
+.tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.note{font-size:14.5px;color:var(--muted);margin:12px 0 0}
+
 .method{margin-top:22px;padding:18px 22px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);font-size:15px}
 .method b{color:var(--ink)}
+
+/* lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(1400px,96vw);width:100%}
+dialog.lb::backdrop{background:rgba(8,10,20,.86)}
+.lb-inner{background:var(--card);border-radius:16px;overflow:hidden}
+.lb-inner img{display:block;width:100%;height:auto;background:#fff}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 18px}
+.lb-bar p{margin:0;font-size:14.5px;color:var(--muted)}
+.lb-bar p b{color:var(--ink)}
+.lb-close{flex:none;background:var(--ink);color:var(--paper);border:0;border-radius:999px;padding:8px 16px;font:600 14px var(--font-body);cursor:pointer}
 
 /* services */
 .services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
@@ -118,7 +183,7 @@ h2{font-size:clamp(32px,4.4vw,52px);line-height:1.02;font-weight:800;max-width:1
 .svc .tag{font-family:var(--font-mono);font-size:12px;color:var(--cobalt);margin-bottom:12px;display:block}
 
 /* process */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .step{border-top:3px solid var(--ink);padding-top:16px}
 .step .n{font-family:var(--font-mono);font-size:13px;color:var(--cobalt)}
 .step h3{font-size:22px;font-weight:700;margin:6px 0 8px}
@@ -137,76 +202,59 @@ h2{font-size:clamp(32px,4.4vw,52px);line-height:1.02;font-weight:800;max-width:1
 .contact .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .contact .btn{border-color:var(--paper);color:var(--paper)}
 .contact .btn.primary{background:var(--paper);color:var(--ink)}
-.contact .addr{font-family:var(--font-mono);font-size:15px;opacity:.85}
 .copied{font-family:var(--font-mono);font-size:13px;color:var(--amber);min-width:70px}
-footer{padding:36px 0 48px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-
-@media (max-width:880px){
-  .case{grid-template-columns:1fr}
-  .services{grid-template-columns:1fr 1fr}
-  .steps{grid-template-columns:1fr 1fr}
-  .stats{grid-template-columns:1fr 1fr}
-  .stat:nth-child(2){border-right:0}
-  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
-}
-@media (max-width:520px){
-  .services,.steps{grid-template-columns:1fr}
-  .wrap{padding:0 16px}
-  .case{padding:22px}
-  .contact{padding:40px 22px}
-  .bar{grid-template-columns:52px 1fr 60px}
-}
-
 .channels{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.15);border-radius:14px;overflow:hidden}
 .ch{background:var(--ink);padding:18px 20px;display:grid;gap:4px;min-width:0}
 .ch-k{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--amber)}
 .ch-v{color:var(--paper);text-decoration:none;font-weight:500;overflow-wrap:anywhere}
 .ch-v:hover{text-decoration:underline}
-@media (max-width:880px){.channels{grid-template-columns:1fr}}
+footer{padding:36px 0 48px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:880px){
+  .case-top,.two-col{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr 1fr}
+  .services{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .channels{grid-template-columns:1fr}
+  .snap .hide-m{display:none}
+}
+@media (max-width:620px){
+  .proofs{grid-template-columns:1fr}
+  .snap td,.snap th{padding:11px 12px}
+  .snap .go{display:none}
+}
+@media (max-width:520px){
+  .services,.steps{grid-template-columns:1fr}
+  .wrap{padding:0 16px}
+  .case{padding:20px}
+  .contact{padding:40px 22px}
+  .bar{grid-template-columns:52px 1fr 62px}
+  .kpi{padding:18px}
+}
 
 @page{size:A4;margin:14mm 12mm}
 @media print{
-  :root,:root[data-theme="dark"]{--ink:#10162b;--paper:#ffffff;--card:#ffffff;--muted:#5b6380;--line:#dde0ea;--cobalt:#2f4dff;--amber:#e8890c;--cobalt-soft:#e6eaff;color-scheme:light}
+  :root,:root[data-theme="dark"]{--ink:#10162b;--paper:#ffffff;--card:#ffffff;--muted:#5b6380;--line:#dde0ea;--cobalt:#2f4dff;--amber:#e8890c;--green:#12805c;--cobalt-soft:#e6eaff;color-scheme:light}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   body{font-size:13px}
   .wrap{max-width:none;padding:0}
-  .navlinks,.ctas,.noprint,.caret{display:none!important}
-  .hero{padding:40px 0 44px;gap:24px}
-  .hero h1{font-size:76px}
-  .hero .lede{font-size:17px}
-  .answer{font-size:14px}
-  .stats{break-inside:avoid}
-  .stat b{font-size:40px}
-  .stat{padding:28px 18px}
+  .navlinks,.ctas,.noprint,.caret,.zoom,.snap .go,dialog{display:none!important}
+  .hero{padding:30px 0 34px;gap:20px}
+  .hero h1{font-size:70px}
   section{padding:28px 0 0}
-  section#work{break-before:page;padding-top:0}
-  section#services{break-before:page;padding-top:0}
-  section#tools{break-before:page;padding-top:0}
-  .sec-head{margin-bottom:16px;break-after:avoid}
-  h2{font-size:32px}
-  .case{grid-template-columns:1.1fr 1fr;gap:22px;padding:18px 20px;break-inside:avoid}
-  .cases{gap:10px}
-  .case h3{font-size:19px;margin-bottom:8px}
-  .case ul{font-size:12.5px}
-  .metric{margin-bottom:12px}
+  #work,#services{break-before:page;padding-top:0}
+  .kpis{grid-template-columns:repeat(4,1fr)}
+  .case{break-inside:auto;padding:18px 20px;gap:16px}
+  .case + .case{break-before:page}
+  .case-top{grid-template-columns:1.1fr 1fr;gap:20px}
+  .case h3{font-size:20px}
   .metric-pct{font-size:30px}
-  .method{break-inside:avoid;font-size:12.5px}
-  .services{grid-template-columns:repeat(3,1fr)}
-  .svc{padding:16px;break-inside:avoid}
-  .svc h3{font-size:16px}.svc p{font-size:12.5px}
-  .steps{grid-template-columns:repeat(4,1fr);break-inside:avoid}
-  .step h3{font-size:17px}.step p{font-size:12.5px}
-  .tool-group{break-inside:avoid;margin-bottom:12px}
-  .tool{font-size:11.5px;padding:5px 10px}
+  .proof,.kpi-table,.kw-table,.method{break-inside:avoid}
   .contact{margin-top:28px;padding:28px;break-inside:avoid}
-  .channels{grid-template-columns:1fr}
-  .ch{grid-template-columns:150px 1fr;align-items:center;padding:12px 18px}
-  .ch-v{font-size:14px}
   .contact .btn,.contact .copied{display:none}
-  footer{padding:16px 0 0}
   a{text-decoration:none}
 }
-@media (prefers-reduced-motion:reduce){.caret{animation:none}.btn:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.caret{animation:none}.btn:hover,.kpi:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -214,6 +262,7 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:14px;display:flex;justif
   <nav aria-label="Main">
     <a class="brand" href="#top">Abdelrhman<span>.</span></a>
     <div class="navlinks">
+      <a href="#summary">Summary</a>
       <a href="#work">Case studies</a>
       <a href="#services">Services</a>
       <a href="#process">Process</a>
@@ -232,10 +281,10 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:14px;display:flex;justif
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.2 6.6L21 11l-6.8 2.4L12 20l-2.2-6.6L3 11l6.8-2.4z"/></svg>
         AI answer
       </div>
-      <p><strong>Abdelrhman Mohamed</strong> is an SEO &amp; GEO Specialist with 5+ years of experience helping SaaS, fintech, travel, e-commerce and app brands across Egypt, Saudi Arabia and the Gulf grow non-branded organic traffic and get cited in AI search results.</p>
+      <p><strong>Abdelrhman Mohamed</strong> is an SEO &amp; GEO Specialist with 5+ years of experience helping healthcare, travel, fintech, SaaS, B2B and e-commerce brands across Egypt, Saudi Arabia and the Gulf grow non-branded organic traffic and get cited in AI search results.</p>
       <div class="cites">
+        <a class="cite" href="#summary">Results summary</a>
         <a class="cite" href="#work">Case studies</a>
-        <a class="cite" href="#services">Services</a>
         <a class="cite" href="#contact">Contact</a>
       </div>
     </div>
@@ -244,16 +293,38 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:14px;display:flex;justif
     <p class="lede">I build SEO and Generative Engine Optimization strategies that turn search demand into traffic, leads and revenue, with less dependence on paid ads.</p>
     <div class="ctas">
       <a class="btn primary" href="#contact">Start a project</a>
-      <a class="btn" href="#work">See the results</a>
+      <a class="btn" href="#summary">See the results</a>
     </div>
   </header>
 
-  <div class="stats" role="list">
-    <div class="stat" role="listitem"><b class="up mono">+4,409%</b><span>Organic clicks, flight booking platform</span></div>
-    <div class="stat" role="listitem"><b class="mono">3.26M</b><span>Impressions in 3 months, B2B payments</span></div>
-    <div class="stat" role="listitem"><b class="mono">9</b><span>Case studies across travel, fintech, e-commerce and apps</span></div>
-    <div class="stat" role="listitem"><b class="mono">0</b><span>Branded keywords counted in any result</span></div>
-  </div>
+  <section id="summary" aria-labelledby="sum-h">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Executive summary</div>
+        <h2 id="sum-h">Results at a glance</h2>
+      </div>
+      <p class="sec-note">Every number below is backed by a real Search Console screenshot further down. Click any result to jump straight to its case study.</p>
+    </div>
+
+    <div class="kpis" id="kpis"></div>
+
+    <div class="facts">
+      <span><b>10</b>case studies with screenshot proof</span>
+      <span><b>5</b>industries</span>
+      <span><b>3</b>markets: Egypt, Saudi Arabia, GCC</span>
+      <span><b>100%</b>non-branded traffic</span>
+    </div>
+
+    <div class="snap-wrap">
+      <div class="snap-title"><h3>Case study snapshot</h3><span>Click a row to open the case</span></div>
+      <div style="overflow-x:auto">
+        <table class="snap">
+          <thead><tr><th>#</th><th>Client</th><th class="hide-m">Industry</th><th class="hide-m">Market</th><th class="hide-m">Period</th><th>Headline result</th><th class="go"></th></tr></thead>
+          <tbody id="snap"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
   <section id="work" aria-labelledby="work-h">
     <div class="sec-head">
@@ -261,10 +332,10 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:14px;display:flex;justif
         <div class="eyebrow">Case studies</div>
         <h2 id="work-h">Results from real Search Console data</h2>
       </div>
-      <p class="sec-note">Client names are kept private. Each project compares the latest period against the period before it.</p>
+      <p class="sec-note">Client names and domains are kept private. Click any screenshot to view it full size.</p>
     </div>
     <div class="cases" id="cases"></div>
-    <div class="method"><b>How these numbers are measured:</b> only non-branded keywords with real search demand are counted. Any query that contains the client's brand name is excluded, so the growth reflects new customers finding the business, not people who already knew it.</div>
+    <div class="method"><b>How these numbers are measured:</b> every result counts non-branded queries only, using a Google Search Console regex filter that removes any query containing the client's brand name. The growth reflects new customers finding the business, not people who already knew it. GA4 and Ahrefs screenshots are added as supporting evidence where available.</div>
   </section>
 
   <section id="services" aria-labelledby="svc-h">
@@ -340,63 +411,204 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:14px;display:flex;justif
   </footer>
 </div>
 
-<script>
-const cases = [
-  {title:"Flight booking platform", industry:"Travel", market:"Egypt & KSA", period:"Last 3 months vs previous 3 months",
-   actions:["Restructured the site by search intent based on keyword research","Optimized landing pages and metadata for booking queries","Found technical issues and shipped fixes with the development team"],
-   clicks:[55,2480], impr:[60200,390000], pc:"4,409", pi:"548"},
-  {title:"Home laser devices store", industry:"E-commerce", market:"Saudi Arabia", period:"Last 6 months vs previous 6 months",
-   actions:["Rebuilt the product taxonomy and site structure from scratch","Led the structure with the winning product to lift conversion (CRO)","Wrote content for every product and category page, adding category content sections through a third-party tool where the CMS had none"],
-   clicks:[18000,112000], impr:[114000,176000], pc:"522", pi:"54"},
-  {title:"Hair care & styling devices store", industry:"E-commerce, new site", market:"Saudi Arabia", period:"Last 3 months vs previous 3 months",
-   actions:["Built category and product pages from keyword research","Added structured data (Schema)","Fixed duplicate content through robots.txt"],
-   clicks:[45,710], impr:[5550,103000], pc:"1,478", pi:"1,756"},
-  {title:"Tissue & paper products store", industry:"E-commerce", market:"Saudi Arabia", period:"Last 6 months vs previous 6 months",
-   actions:["Optimized pages, fixed page-level issues and improved internal linking","Grew the blog and ran backlink campaigns on coupon sites","Added FAQs to category pages through a third-party tool where the CMS had no support, a major driver of the results"],
-   clicks:[9000,24000], impr:[304000,610000], pc:"167", pi:"101"},
-  {title:"B2B payment solutions platform", industry:"Fintech, B2B", market:"Saudi Arabia", period:"Last 3 months vs previous 3 months",
-   actions:["Keyword research and landing page planning","SEO content for transactional and informational queries","Technical fixes and backlink campaigns"],
-   clicks:[2520,5260], impr:[1300000,3260000], pc:"109", pi:"151"},
-  {title:"Mattress store", industry:"E-commerce", market:"Saudi Arabia", period:"Last 6 months vs previous 6 months",
-   actions:["On-page optimization and internal linking","Blog content strategy and paid backlink campaigns","Resolved all technical SEO issues across the site"],
-   clicks:[18000,34000], impr:[1700000,2200000], pc:"89", pi:"29"},
-  {title:"Fashion & apparel store", industry:"E-commerce", market:"", period:"Last 6 months vs previous 6 months",
-   actions:["Segmented categories by user intent","Fixed indexing and crawlability issues","Improved internal linking and site architecture"],
-   clicks:[2230,3780], impr:[500000,518000], pc:"69", pi:"4"},
-  {title:"Coffee & brewing equipment store", industry:"E-commerce", market:"Saudi Arabia", period:"Last 6 months vs previous 6 months",
-   actions:["On-page and metadata optimization","Restructured category and product pages","Fixed crawlability and indexing issues, plus backlink campaigns"],
-   clicks:[9770,14200], impr:[1090000,1300000], pc:"45", pi:"19"},
-  {title:"Marriage app (Android & iOS)", industry:"Mobile app, ASO", market:"Saudi Arabia", period:"Last 6 months vs previous 6 months",
-   actions:["Full ASO on Google Play and the App Store: app title, description and dedicated keyword research with ASO tools","Set up tracking on the website to map the user journey and placed download buttons where users engage most","Built the blog from zero into a leading resource for paid marriage apps"],
-   source:"App store downloads", single:{name:"App downloads", pct:"40", note:"Growth in downloads across Android and iOS"}}
-];
-const trim = s => s.includes(".") ? s.replace(/0+$/,"").replace(/\.$/,"") : s;
-const fmt = n => n>=1e6 ? trim((n/1e6).toFixed(2))+"M" : n>=1e3 ? trim((n/1e3).toFixed(n>=1e5?0:2))+"K" : String(n);
+<dialog class="lb" id="lb" aria-label="Screenshot preview">
+  <div class="lb-inner">
+    <img id="lb-img" alt="">
+    <div class="lb-bar"><p id="lb-cap"></p><button class="lb-close" id="lb-close" type="button">Close</button></div>
+  </div>
+</dialog>
 
-const single = m => `<div class="metric">
-    <div class="metric-top"><span class="metric-name">${m.name}</span><span class="metric-pct mono">+${m.pct}%</span></div>
-    <p class="single-note">${m.note}</p>
-    <div class="stores"><span class="chip">Google Play</span><span class="chip">App Store</span><span class="chip">Blog from zero</span></div>
-  </div>`;
-const metric = (name,[a,b],p) => {
+<script>
+/* ---------- DATA ---------- */
+const cases = [
+  {id:"healthcare", title:"Digital healthcare platform", industry:"Healthcare", market:"", period:"6 months, before vs after",
+   sum:"A health and wellness portal with almost no organic presence grew into a steady source of patient traffic.",
+   actions:["Built medical topic clusters aligned with E-E-A-T standards","Resolved indexation bottlenecks that kept key pages out of Google","Structured data and on-page optimization across the content hub"],
+   clicks:[66,3710], impr:[5770,474000], pc:"5,521", pi:"8,115",
+   snap:{res:"+5,521%", sub:"organic clicks"},
+   proofs:[["gsc","healthcare-before","Before","66 clicks and 5.77K impressions before the engagement."],
+           ["gsc","healthcare-after","After","3.71K clicks and 474K impressions after six months."]]},
+
+  {id:"flight", title:"Flight booking platform", industry:"Travel", market:"Egypt & KSA", period:"Last 3 months vs previous 3 months",
+   sum:"A booking site that barely appeared for flight queries now ranks for high-intent booking searches in two markets.",
+   actions:["Restructured the site by search intent based on keyword research","Optimized landing pages and metadata for booking queries","Found technical issues and shipped fixes with the development team"],
+   clicks:[55,2480], impr:[60200,390000], pc:"4,409", pi:"548", extra:"Average position improved from 57 to 13.4.",
+   snap:{res:"+4,409%", sub:"organic clicks"},
+   proofs:[["gsc","flight","3-month comparison","2.48K clicks vs 55, 390K impressions vs 60.2K, average position 13.4 vs 57."]]},
+
+  {id:"socks", title:"Socks & hosiery brand", industry:"E-commerce", market:"Saudi Arabia & GCC", period:"4 months vs previous 4 months (Nov 2024 to Mar 2025)",
+   sum:"A specialist socks store competing with multi-category fashion marketplaces went from unranked to page one for its core keywords, and organic search now supports almost a third of all store conversions.",
+   actions:["Created crawlable sub-category landing pages (long, ankle, half-crew and quarter-crew socks) linked from the footer, so Google indexes granular commercial pages without cluttering the header","Redesigned heavy category text blocks into clean Q&A sections, rewrote all category and product descriptions, and refreshed meta titles and descriptions","Published 3 long-tail blog articles and built 40 contextual backlinks plus 44 social profile links across GCC channels"],
+   clicks:[118,2010], impr:[4030,98200], pc:"1,603", pi:"2,337", extra:"Average position improved from 19.0 to 9.5.",
+   snap:{res:"+1,603%", sub:"organic clicks"},
+   kpis:{head:["Metric","Previous 4 months","Last 4 months","Change"], rows:[
+     ["GA4 organic sessions","166","3,059","+1,742.8%"],
+     ["GA4 organic users","150","2,922","+1,848%"],
+     ["Organic key events","373","9,714","+2,504.3%"],
+     ["Engagement rate","90.36%","95.52%","+5.2 pts"],
+     ["SEO-assisted conversions","Not tracked","8,832","30.9% of all store conversions"],
+     ["Ahrefs organic keywords","4","139","+135 new, 12 in top 3"]]},
+   kw:{rows:[["جوارب","Socks (standard Arabic)","2,400","Not ranked","#3"],["شرابات","Socks (plural)","9,900","#82","#6"],["شراب","Socks (singular)","9,900","#63","#9"],["شراريب","Socks (Gulf dialect)","1,600","#34","#7"],["شراب طويل","Long crew socks","480","#14","#6"],["جوارب رجالي","Men's socks","390","Not ranked","#9"],["كلسات","Socks (Levantine dialect)","260","Not ranked","#1"],["شراب نسائي","Women's socks","170","#14","#4"]],
+       note:"Every regional Arabic word for socks was targeted with its own category or footer page."},
+   proofs:[["gsc","socks-gsc","Search Console","Clicks rose from 118 to 2.01K and impressions from 4.03K to 98.2K, with average position moving from 19.0 to 9.5."],
+           ["ga4","socks-ga4","GA4 traffic acquisition","Organic sessions grew from 166 to 3,059 and organic key events from 373 to 9,714."],
+           ["ahrefs","socks-ahrefs","Ahrefs","139 organic keywords (+135), 12 top-3 rankings and 333 backlinks. Traffic expanded beyond Saudi Arabia (53.5%) into the UAE (20.2%) and Egypt."]]},
+
+  {id:"haircare", title:"Hair care & styling devices store", industry:"E-commerce, new site", market:"Saudi Arabia", period:"Last 3 months vs previous 3 months",
+   sum:"A newly launched store built its organic channel from scratch within its first quarter of SEO work.",
+   actions:["Built category and product pages from keyword research","Added structured data (Schema)","Fixed duplicate content through robots.txt"],
+   clicks:[45,710], impr:[5550,103000], pc:"1,478", pi:"1,756", extra:"Average position improved from 11.1 to 7.1.",
+   snap:{res:"+1,478%", sub:"organic clicks"},
+   proofs:[["gsc","haircare","3-month comparison","710 clicks vs 45, 103K impressions vs 5.55K, average position 7.1 vs 11.1."]]},
+
+  {id:"rehab", title:"Medical rehabilitation center", industry:"Healthcare, clinic", market:"", period:"6 months, before vs after",
+   sum:"A physiotherapy and rehabilitation clinic turned search into a reliable patient discovery channel.",
+   actions:["Built localized landing pages for each treatment and service","On-page optimization with E-E-A-T content standards","Local service schema and internal linking between treatment pages"],
+   clicks:[206,1900], impr:[3780,63400], pc:"822", pi:"1,577",
+   snap:{res:"+822%", sub:"organic clicks"},
+   proofs:[["gsc","rehab-before","Before","206 clicks and 3.78K impressions before the engagement."],
+           ["gsc","rehab-after","After","1.9K clicks and 63.4K impressions after six months."]]},
+
+  {id:"agency", title:"B2B digital marketing agency", industry:"B2B services", market:"MENA", period:"First 6 months after launch",
+   sum:"A brand-new agency domain with no search footprint reached tens of thousands of impressions and steady commercial clicks.",
+   actions:["Planned and built B2B service pages around commercial search intent","Technical setup, structured data and indexing for a new domain","Authority link building from scratch"],
+   clicks:[3,542], impr:[11,46800], pcText:"From launch", piText:"From launch",
+   snap:{res:"3 → 542", sub:"clicks, new domain"},
+   proofs:[["gsc","agency-before","At launch","3 clicks and 11 impressions at launch."],
+           ["gsc","agency-after","After 6 months","542 clicks and 46.8K impressions after six months."]]},
+
+  {id:"fashion", title:"Oversized & travel fashion store", industry:"E-commerce", market:"Saudi Arabia", period:"January 2025 vs July 2025 (monthly)",
+   sum:"A fashion brand that ranked outside the top 100 for almost every non-branded keyword grew monthly organic revenue 7.5x in seven months and now ranks #2 for \"clothing store\" in Saudi Arabia.",
+   actions:["Rewrote 79 product pages by hand in Arabic and English, refreshed all meta titles and descriptions (site CTR doubled from 1.38% to 2.86%), and added FAQ modules to core categories","Segmented categories by user intent and built an internal linking mesh of 4 contextual links per product page","Fixed indexing and crawlability: minified render-blocking JS and CSS, compressed images, added canonicals, updated robots.txt and sitemaps, and audited 1,500+ internal links","Built 28 contextual backlinks and 17 social signals"],
+   clicks:[136,554], impr:[44198,120820], pc:"307", pi:"173", metricLabel:"Monthly",
+   snap:{res:"+657%", sub:"monthly organic revenue"},
+   kpis:{head:["Metric","Jan 2025","Apr 2025","Jul 2025","Change"], rows:[
+     ["Monthly organic revenue (GA4)","7,422.90 SAR","26,241.00 SAR","56,220.45 SAR","+657.4%"],
+     ["Monthly organic purchasers","16","61","202","+1,162.5%"],
+     ["Monthly organic sessions","1,471","3,739","5,140","+249.4%"],
+     ["Bounce rate","37.39%","19.87%","18.75%","-49.9%"],
+     ["Non-branded clicks (GSC)","136","261","554","+307.4%"],
+     ["Non-branded impressions (GSC)","44,198","63,280","120,820","+173.4%"]]},
+   kw:{rows:[["متجر ملابس","Clothing store","22,200","Not ranked","#2"],["ملابس اوفر سايز","Oversized clothing","720","Not ranked","#6"],["طقم اوفر سايز رجالي","Men's oversized set","480","Not ranked","#5"],["ملابس سفر للنساء","Women's travel clothes","110","Not ranked","#9"],["متجر ملابس اوفر سايز","Oversized clothing store","70","Not ranked","#3"],["بنطلون اوفر سايز نسائي","Women's oversized pants","50","Not ranked","#5"],["طقم الأب والابن","Father & son matching set","50","Not ranked","#1"]],
+       note:"Every keyword started outside the top 100 and reached page one of Google Saudi Arabia within seven months."},
+   proofs:[["gsc","fashion-gsc-monthly","Search Console, monthly","Total and non-branded clicks by month. Non-branded clicks grew from 136 to 554 and impressions from 44.2K to 120.8K."],
+           ["ga4","fashion-ga4-monthly","GA4, monthly","Monthly organic revenue grew from 7,422.90 to 56,220.45 SAR, purchasers from 16 to 202, and bounce rate fell from 37.39% to 18.75%."],
+           ["ga4","fashion-ga4-attribution","GA4 attribution paths","Organic search is the #2 discovery channel in early and mid touchpoints and the #3 closing channel in late touchpoints."],
+           ["ahrefs","fashion-ahrefs","Ahrefs","1.2K organic keywords (+761), 59 in the top 3 (+37), organic traffic 3.4K (+1.2K) and 725 backlinks (+114)."]]},
+
+  {id:"payments", title:"B2B payment solutions platform", industry:"Fintech, B2B", market:"Saudi Arabia", period:"Last 3 months vs previous 3 months",
+   sum:"A platform that unifies banking payment systems for companies doubled its non-branded clicks in a single quarter.",
+   actions:["Keyword research and landing page planning","SEO content for transactional and informational queries","Technical fixes and backlink campaigns"],
+   clicks:[2520,5260], impr:[1300000,3260000], pc:"109", pi:"151", extra:"Average position improved from 9 to 7.4.",
+   snap:{res:"+109%", sub:"organic clicks"},
+   proofs:[["gsc","payments","3-month comparison","5.26K clicks vs 2.52K, 3.26M impressions vs 1.3M, average position 7.4 vs 9."]]},
+
+  {id:"coffee", title:"Coffee & brewing equipment store", industry:"E-commerce", market:"Saudi Arabia", period:"Last 6 months vs previous 6 months",
+   sum:"An established store grew non-branded clicks on an already large base while lifting average position by five places.",
+   actions:["On-page and metadata optimization","Restructured category and product pages","Fixed crawlability and indexing issues, plus backlink campaigns"],
+   clicks:[9770,14200], impr:[1090000,1300000], pc:"45", pi:"19", extra:"Average position improved from 15.4 to 10.2.",
+   snap:{res:"+45%", sub:"organic clicks"},
+   proofs:[["gsc","coffee","6-month comparison","14.2K clicks vs 9.77K, 1.3M impressions vs 1.09M, average position 10.2 vs 15.4."]]},
+
+  {id:"pharmacy", title:"Enterprise retail pharmacy chain", industry:"Healthcare, enterprise e-commerce", market:"Egypt", period:"3 months, before vs after",
+   sum:"On a mega catalog that already drew half a million clicks, technical and structural work added 120,000 clicks and 16.1M impressions in three months.",
+   actions:["Enterprise crawl optimization across a very large product catalog","Medical product schema","Category hierarchy tuning"],
+   clicks:[511000,631000], impr:[26700000,42800000], pc:"23.5", pi:"60.3", extra:"Average position improved from 7.3 to 6.5.",
+   snap:{res:"+120K", sub:"clicks in 3 months"},
+   proofs:[["gsc","pharmacy-before","Before","511K clicks and 26.7M impressions, average position 7.3."],
+           ["gsc","pharmacy-after","After","631K clicks and 42.8M impressions, average position 6.5."]]}
+];
+
+const highlights = [
+  {id:"healthcare", big:"+5,521%", what:"Organic clicks", where:"Digital healthcare platform, 6 months"},
+  {id:"flight", big:"+4,409%", what:"Organic clicks", where:"Flight booking platform, 3 months"},
+  {id:"fashion", big:"+657%", what:"Monthly organic revenue", where:"Fashion store, 7.4K to 56.2K SAR"},
+  {id:"pharmacy", big:"631K", what:"Clicks in 3 months", where:"Pharmacy chain, 42.8M impressions"}
+];
+
+/* ---------- RENDER ---------- */
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+const trim = s => s.includes(".") ? s.replace(/0+$/,"").replace(/\.$/,"") : s;
+const fmt = n => n>=1e6 ? trim((n/1e6).toFixed(n>=1e7?1:2))+"M" : n>=1e3 ? trim((n/1e3).toFixed(n>=1e5?0:2))+"K" : String(n);
+const toolName = {gsc:"Search Console", ga4:"GA4", ahrefs:"Ahrefs"};
+
+document.getElementById("kpis").innerHTML = highlights.map(h=>`
+  <a class="kpi" href="#case-${h.id}"><b class="mono">${h.big}</b><span class="k-what">${h.what}</span><span class="k-where">${h.where}</span><span class="k-go">View case →</span></a>`).join("");
+
+document.getElementById("snap").innerHTML = cases.map((c,i)=>`
+  <tr data-target="case-${c.id}" tabindex="0">
+    <td class="n">${String(i+1).padStart(2,"0")}</td>
+    <td class="c-name"><a href="#case-${c.id}">${c.title}</a></td>
+    <td class="hide-m">${c.industry}</td>
+    <td class="hide-m">${c.market||"—"}</td>
+    <td class="hide-m">${c.period.replace(/ \(.*\)/,"")}</td>
+    <td class="res mono">${c.snap.res}<small>${c.snap.sub}</small></td>
+    <td class="go">View →</td>
+  </tr>`).join("");
+document.querySelectorAll("#snap tr").forEach(tr=>{
+  const go=()=>{ location.hash = tr.dataset.target; };
+  tr.addEventListener("click", e=>{ if(e.target.tagName!=="A") go(); });
+  tr.addEventListener("keydown", e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); go(); } });
+});
+
+const metric = (name,[a,b],p,txt) => {
   const w = Math.max(a/b*100, 1.5).toFixed(1);
+  const pct = txt ? `<span class="metric-pct txt">${txt}</span>` : `<span class="metric-pct mono">+${p}%</span>`;
   return `<div class="metric">
-    <div class="metric-top"><span class="metric-name">${name}</span><span class="metric-pct mono">+${p}%</span></div>
+    <div class="metric-top"><span class="metric-name">${name}</span>${pct}</div>
     <div class="bar"><span>Before</span><div class="track"><div class="fill" style="width:${w}%"></div></div><span class="v">${fmt(a)}</span></div>
     <div class="bar after"><span>After</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="v">${fmt(b)}</span></div>
   </div>`;
 };
-document.getElementById("cases").innerHTML = cases.map(c => `
-  <article class="case">
-    <div>
-      <div class="meta"><span class="chip">${c.industry}</span>${c.market?`<span class="chip">${c.market}</span>`:""}</div>
-      <h3>${c.title}</h3>
-      <ul>${c.actions.map(a=>`<li>${a}</li>`).join("")}</ul>
-      <div class="period">${c.period} · ${c.source || "Google Search Console, non-branded"}</div>
-    </div>
-    <div>${c.single ? single(c.single) : metric("Clicks",c.clicks,c.pc)+metric("Impressions",c.impr,c.pi)}</div>
-  </article>`).join("");
+const proof = (c,[tool,file,label,cap]) => `
+  <figure class="proof">
+    <button type="button" data-src="images/${file}.webp" data-cap="${esc(`<b>${c.title}, ${label}.</b> ${cap}`)}" aria-label="View ${esc(label)} screenshot full size">
+      <img src="images/${file}.webp" width="1600" height="700" loading="lazy" decoding="async" alt="${esc(`${toolName[tool]} screenshot, ${c.title}: ${cap}`)}">
+      <span class="tag">${toolName[tool]}</span><span class="zoom">Click to enlarge</span>
+    </button>
+    <figcaption><b>${label}.</b> ${cap}</figcaption>
+  </figure>`;
+const kpiTable = k => `<div class="tbl-scroll"><table class="kpi-table"><thead><tr>${k.head.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${
+  k.rows.map(r=>`<tr>${r.map((v,i)=>`<td${i===r.length-1?' class="up"':''}>${v}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+const kwTable = k => `<div class="tbl-scroll"><table class="kw-table"><thead><tr><th>Keyword</th><th>Meaning</th><th>Monthly searches</th><th>Before</th><th>After</th></tr></thead><tbody>${
+  k.rows.map(r=>`<tr><td class="ar" lang="ar">${r[0]}</td><td>${r[1]}</td><td class="mono">${r[2]}</td><td class="mono">${r[3]}</td><td class="rank">${r[4]}</td></tr>`).join("")}</tbody></table></div><p class="note">${k.note}</p>`;
 
+document.getElementById("cases").innerHTML = cases.map((c,i)=>{
+  const gsc = c.proofs.filter(p=>p[0]==="gsc"), other = c.proofs.filter(p=>p[0]!=="gsc");
+  const lbl = c.metricLabel ? c.metricLabel+" " : "";
+  return `
+  <article class="case" id="case-${c.id}">
+    <div class="case-top">
+      <div>
+        <div class="meta"><span class="case-no">${String(i+1).padStart(2,"0")}</span><span class="chip">${c.industry}</span>${c.market?`<span class="chip">${c.market}</span>`:""}<span class="chip nb">Non-branded</span></div>
+        <h3>${c.title}</h3>
+        <p class="sum">${c.sum}</p>
+        <ul>${c.actions.map(a=>`<li>${a}</li>`).join("")}</ul>
+        <div class="period">${c.period} · Google Search Console, non-branded${c.extra?` · ${c.extra}`:""}</div>
+      </div>
+      <div>${metric(lbl+"Clicks",c.clicks,c.pc,c.pcText)+metric(lbl+"Impressions",c.impr,c.pi,c.piText)}</div>
+    </div>
+    <div>
+      <p class="block-h">Search Console proof</p>
+      <div class="proofs${gsc.length===1?" one":""}">${gsc.map(p=>proof(c,p)).join("")}</div>
+    </div>
+    ${c.kpis?`<div><p class="block-h">Business impact</p>${kpiTable(c.kpis)}</div>`:""}
+    ${c.kw?`<div><p class="block-h">Commercial keyword rankings, Google Saudi Arabia</p>${kwTable(c.kw)}</div>`:""}
+    ${other.length?`<div><p class="block-h">Supporting evidence: GA4 &amp; Ahrefs</p><div class="proofs">${other.map(p=>proof(c,p)).join("")}</div></div>`:""}
+  </article>`;
+}).join("");
+
+/* ---------- LIGHTBOX ---------- */
+const lb=document.getElementById("lb"), lbImg=document.getElementById("lb-img"), lbCap=document.getElementById("lb-cap");
+document.getElementById("cases").addEventListener("click", e=>{
+  const b=e.target.closest(".proof button"); if(!b) return;
+  lbImg.src=b.dataset.src; lbImg.alt=b.querySelector("img").alt; lbCap.innerHTML=b.dataset.cap;
+  if(lb.showModal) lb.showModal(); else window.open(b.dataset.src,"_blank");
+});
+document.getElementById("lb-close").addEventListener("click", ()=>lb.close());
+lb.addEventListener("click", e=>{ if(e.target===lb) lb.close(); });
+
+/* ---------- COPY EMAIL ---------- */
 document.getElementById("copyEmail").addEventListener("click", async () => {
   const out = document.getElementById("copied");
   try { await navigator.clipboard.writeText("abdelrhmanramadan32@gmail.com"); out.textContent = "Copied"; }
